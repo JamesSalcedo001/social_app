@@ -38,7 +38,7 @@ function Signup() {
                     password: "",
                     avatar: ""
                 })
-                const errorList = user.errors.map(e => <li>{e}</li>)
+                const errorList = user.errors.map(e => <li key={e}>{e}</li>)
                 setErrors(errorList)
             }
         })
