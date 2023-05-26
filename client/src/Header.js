@@ -1,7 +1,8 @@
 function Header() {
     return (
         <div>
-            Header
+            <h1>Welcome UserNameHere!</h1>
+            {/* <img alt="avatar" src={}/> */}
         </div>
     )
 }
