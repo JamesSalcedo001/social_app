@@ -182,3 +182,7 @@ code {
     transform: rotate(360deg);
   }
 } 
+
+.commentCard {
+  background-color:rgb(64, 152, 196);
+}
