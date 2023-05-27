@@ -7,6 +7,7 @@ function UserProvider({children}) {
     const location = useLocation()
     const navigate = useNavigate()
     const [user, setUser] = useState({})
+    const [posts, setPosts] = useState([])
     const [loggedIn, setLoggedIn] = useState(false)
     const [errors, setErrors] = useState([])
 
@@ -20,6 +21,7 @@ function UserProvider({children}) {
                 setErrors(data.errors)
             } else {
                 setLoggedIn(true)
+                fetchPosts()
             }
         })
     },[])
@@ -27,6 +29,12 @@ function UserProvider({children}) {
     useEffect(() => {
         setErrors([])
     }, [location.pathname])
+
+    const fetchPosts = () => {
+        fetch("/posts")
+        .then(res => res.json())
+        .then(data => setPosts(data))
+    }
 
     const login = (user) => {
         setUser(user)
@@ -48,7 +56,7 @@ function UserProvider({children}) {
 
 
     return (
-        <UserContext.Provider value={{user, loggedIn, logout, signup, login, errors, setErrors}}>
+        <UserContext.Provider value={{user, posts, loggedIn, logout, signup, login, errors, setErrors}}>
             {children}
         </UserContext.Provider>
     )

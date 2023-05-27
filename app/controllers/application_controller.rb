@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
-before_action :authorize
+before_action :authenticate
 
   def current_user
     @current_user ||= User.find_by_id(session[:user_id])
@@ -11,7 +11,7 @@ before_action :authorize
 
   private
 
-  def authorize
+  def authenticate
     render json: { errors: ["Not authorized"]}, status: :unauthorized unless current_user
   end
 
