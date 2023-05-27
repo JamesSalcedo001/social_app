@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
 }
 
 body {
@@ -9,6 +15,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #282c34;
 }
 
 code {
@@ -19,18 +26,32 @@ code {
 
 
 
-/* .App-logo {
-  height: 40vmin;
+
+
+
+#headerMoon {
+  float: left;
+  height: 10vmin;
   pointer-events: none;
 }
 
+
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  #headerMoon {
+    animation: headerMoon-spin infinite 20s linear;
   }
 }
 
-.App-header {
+@keyframes headerMoon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} 
+
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -39,24 +60,18 @@ code {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 } */
 
-img {
+
+
+/* img {
   height: 15vh;
   width: 15vw;
   border-radius: 4vh;
-}
+} */
 
 #postContainer {
+  margin-top: 20vh;
   background-color: rebeccapurple;
   padding: 1vh;
   height: auto;
@@ -71,8 +86,13 @@ img {
 }
 
 .header {
-  background-color: rgb(34, 45, 175);
-  padding: 3vh;
+  background-color: rgb(13, 18, 109);
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  padding: 1vh;
+  height: fit-content;
+  color: rgb(12, 173, 222);
 }
 
 #postForm {
@@ -81,3 +101,84 @@ img {
   width: 25vw;
   border-radius: 1vh;
 }
+
+
+
+#avatar {
+  float: right;
+  height: 10vmin;
+  border-radius: 36vh;
+}
+
+.postImage {
+  height: 10vmin;
+}
+
+.headerButton {
+  border-radius: 1.6vh;
+  width: 30vw;
+  line-height: 1.2em;
+  font-weight: bolder;
+  font-size: x-large;
+  padding: 0.4em;
+  margin-bottom:1vh;
+  margin-top: 1vh;
+  margin-inline: 2vw;
+  background-color: rgb(10, 41, 70);
+  color: rgb(12, 173, 222);
+  transition: 0.3s;
+}
+
+.headerButton:hover {
+  translate: -5px -5px -5px;
+  box-shadow: -4px 5px 25px rgb(249, 249, 249);
+  color: rgb(255, 255, 255);
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+}
+
+.home-button {
+  border-radius: 1.6vh;
+  min-width: 200px;
+  line-height: 1.1em;
+  font-weight: bolder;
+  font-size: x-large;
+  padding: 0.4em;
+  margin-bottom:5vh;
+  color: rgb(12, 173, 222);
+  background-color: rgb(10, 41, 70);
+  transition: 0.3s;
+}
+
+.home-button:hover {
+  translate: -5px -5px -5px;
+  box-shadow: -4px 5px 25px rgb(249, 249, 249);
+  color: rgb(255, 255, 255);
+}
+
+#homeMoon {
+  height: 40vmin;
+  margin-top: 20vh;
+  margin-bottom: 15vh;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #homeMoon {
+    animation: homeMoon-spin infinite 20s linear;
+  }
+}
+
+@keyframes homeMoon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} 

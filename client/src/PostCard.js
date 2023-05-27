@@ -6,7 +6,7 @@ function PostCard({post}) {
     return (
         <div className="postCard">
             <h1>{title}</h1>
-            <img alt="post" src={image}/>
+            <img className="postImage" alt="post" src={image}/>
             <h5>{content}</h5>
             <h5>likes: {likes}</h5>
         </div>
