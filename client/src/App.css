@@ -49,3 +49,9 @@ code {
     transform: rotate(360deg);
   }
 } */
+
+img {
+  height: 15vh;
+  width: 15vw;
+  border-radius: 4vh;
+}

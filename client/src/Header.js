@@ -6,15 +6,20 @@ function Header() {
     const {user, logout, loggedIn} = useContext(UserContext)
     const navigate = useNavigate()
 
-    function logOutUser() {
+    const logOutUser = () => {
         fetch("/logout", {
-            method: "DELETE"
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
         })
         .then(() => {
             logout()
             navigate("/")
         })
     }
+
+
     if (loggedIn) {
         return (
             <div>
