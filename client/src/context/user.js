@@ -36,6 +36,23 @@ function UserProvider({children}) {
         .then(data => setPosts(data))
     }
 
+    const addPost = (post) => {
+        fetch("/posts", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(post)
+        })
+        .then(res => res.json())
+        .then(data => {
+            setPosts([...posts, data])
+        })
+    }
+
+
+
+
     const login = (user) => {
         setUser(user)
         setLoggedIn(true)
@@ -56,7 +73,7 @@ function UserProvider({children}) {
 
 
     return (
-        <UserContext.Provider value={{user, posts, loggedIn, logout, signup, login, errors, setErrors}}>
+        <UserContext.Provider value={{user, posts, loggedIn, logout, signup, login, errors, setErrors, addPost}}>
             {children}
         </UserContext.Provider>
     )

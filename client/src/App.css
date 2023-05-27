@@ -55,3 +55,29 @@ img {
   width: 15vw;
   border-radius: 4vh;
 }
+
+#postContainer {
+  background-color: rebeccapurple;
+  padding: 1vh;
+  height: auto;
+}
+
+.postCard {
+  background-color: red;
+  height: max-content;
+  width: 30vh;
+  border-radius: 3vh;
+  padding: 1vh;
+}
+
+.header {
+  background-color: rgb(34, 45, 175);
+  padding: 3vh;
+}
+
+#postForm {
+  background-color: green;
+  height: 8vh;
+  width: 25vw;
+  border-radius: 1vh;
+}

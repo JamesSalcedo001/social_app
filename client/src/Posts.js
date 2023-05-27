@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { UserContext } from "./context/user";
 import PostCard from "./PostCard"
+import NewPost from "./NewPost";
 
 function Posts() {
     const {posts, loggedIn} = useContext(UserContext)
@@ -8,7 +9,8 @@ function Posts() {
     if (loggedIn) {
         const postMap = posts.map(post => <PostCard key={post.id} post={post}/>)
         return (
-            <div>
+            <div id="postContainer">
+                <NewPost/>
                 {postMap}
             </div>
         )

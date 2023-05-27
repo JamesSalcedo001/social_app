@@ -22,15 +22,18 @@ function Header() {
 
     if (loggedIn) {
         return (
-            <div>
+            <div className="header">
                 <h1>Welcome {user.username}!</h1>
                 <img alt="avatar" src={user.avatar}/>
                 <button onClick={logOutUser}>Log Out!</button>
+                <NavLink to="/post_list">
+                    <button>Posts!</button>
+                </NavLink>
             </div>
         )
     } else {
         return (
-            <div>
+            <div className="header">
                 <NavLink to="/login">
                     <button>Log In!</button>
                 </NavLink>

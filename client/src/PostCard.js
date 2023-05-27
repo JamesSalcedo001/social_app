@@ -4,7 +4,7 @@ function PostCard({post}) {
     console.log(post)
     const {title, content, image, likes} = post
     return (
-        <div>
+        <div className="postCard">
             <h1>{title}</h1>
             <img alt="post" src={image}/>
             <h5>{content}</h5>
