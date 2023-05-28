@@ -6,6 +6,7 @@ import { UserProvider } from './context/user';
 import Login from './Login';
 import Signup from './Signup';
 import Posts from './Posts';
+import CommentsList from "./CommentsList"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/login" element={<Login/>} />
           <Route exact path="/signup" element={<Signup/>} />
           <Route exact path="/post_list" element={<Posts/>} />
+          <Route exact path="/comment_list" element={<CommentsList/>} />
         </Routes>
       </UserProvider>
     </div>

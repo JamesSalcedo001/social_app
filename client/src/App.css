@@ -72,15 +72,21 @@ code {
 
 #postContainer {
   margin-top: 20vh;
-  background-color: rebeccapurple;
   padding: 1vh;
   height: auto;
+  width: 100vw;
+  display: grid;
+  gap: 5vh;
+  grid-template-rows: repeat(1, 1fr);
 }
 
 .postCard {
-  background-color: red;
-  height: max-content;
-  width: 30vh;
+  margin: auto;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+  background-color: rgb(68, 158, 154);
+  height: 60vh;
+  width: 30vw;
   border-radius: 3vh;
   padding: 1vh;
 }
@@ -96,10 +102,11 @@ code {
 }
 
 #postForm {
-  background-color: green;
-  height: 8vh;
-  width: 25vw;
+  background-color: rgb(185, 194, 185);
+  height: 10vh;
+  width: 45vw;
   border-radius: 1vh;
+  margin: auto;
 }
 
 
@@ -184,5 +191,17 @@ code {
 } 
 
 .commentCard {
-  background-color:rgb(64, 152, 196);
+  background-color:rgb(162, 255, 0);
+  width: 70vw;
+}
+
+.postComments {
+  margin: auto;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+  background-color: rgb(29, 189, 17);
+  height: 60vh;
+  width: 30vw;
+  border-radius: 3vh;
+  padding: 1vh;
 }

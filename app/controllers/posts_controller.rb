@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-    before_action :authenticate
     before_action :find_post, only: [:show, :update, :destroy]
     skip_before_action :authenticate
 

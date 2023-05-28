@@ -51,6 +51,28 @@ function UserProvider({children}) {
     }
 
 
+    const addComment = (newComment, isCommenting) => {
+        fetch("/comments", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newComment)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.errors) {
+                setErrors(data.errors)
+            } else {
+                const updatedUser = { ...user, comments: [...user.comments, data] }
+                setUser(updatedUser)
+                setErrors([])
+                isCommenting(true)
+                console.log(user)
+            }
+        })
+        .catch(error => console.log(error))
+    }
 
 
     const login = (user) => {
@@ -73,7 +95,7 @@ function UserProvider({children}) {
 
 
     return (
-        <UserContext.Provider value={{user, posts, loggedIn, logout, signup, login, errors, setErrors, addPost}}>
+        <UserContext.Provider value={{user, posts, addComment, loggedIn, logout, signup, login, errors, setErrors, addPost}}>
             {children}
         </UserContext.Provider>
     )

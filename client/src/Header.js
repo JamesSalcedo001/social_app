@@ -112,6 +112,10 @@ function Header() {
                 <NavLink to="/post_list">
                     <button className="headerButton">See Posts!</button>
                 </NavLink>
+
+                <NavLink to="/comment_list">
+                    <button className="headerButton">See Comments!</button>
+                </NavLink>
             </div>
         )
     } else {

@@ -1,13 +1,20 @@
 class CommentsController < ApplicationController
     before_action :find_post, except: [:create, :index]
+    skip_before_action :authenticate, except: [:update, :destroy]
 
     def show
         render json: @comment
     end
 
     def index
-        render json: @current_user.comments
+        comments = @current_user.comments
+        render json: comments
     end
+
+    def create
+        comment = current_user.comments.create!(comment_params)
+        render json: comment
+    end 
 
     def update
         @comment.update(comment_params)
@@ -22,7 +29,7 @@ class CommentsController < ApplicationController
     private 
 
     def comment_params
-        params.permit(:body)
+        params.permit(:body, :post_id, :user_id)
     end
 
     def find_comment
