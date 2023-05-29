@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
-    before_action :find_post, except: [:create, :index]
-    skip_before_action :authenticate, except: [:update, :destroy]
+    before_action :find_comment, except: [:create, :index]
 
     def show
         render json: @comment
@@ -12,16 +11,18 @@ class CommentsController < ApplicationController
     end
 
     def create
-        comment = current_user.comments.create!(comment_params)
+        comment = @current_user.comments.create!(comment_params)
         render json: comment
     end 
 
     def update
+        @comment
         @comment.update(comment_params)
         render json: @comment
     end
 
     def destroy
+        @comment
         @comment.destroy
         head :no_content
     end

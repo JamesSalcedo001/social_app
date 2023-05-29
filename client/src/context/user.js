@@ -36,7 +36,7 @@ function UserProvider({children}) {
         .then(data => setPosts(data))
     }
 
-    const addPost = (post) => {
+    const addPost = (post, showingForm) => {
         fetch("/posts", {
             method: "POST",
             headers: {
@@ -46,7 +46,12 @@ function UserProvider({children}) {
         })
         .then(res => res.json())
         .then(data => {
-            setPosts([...posts, data])
+            if (data.errors) {
+                setErrors(data.errors)
+            } else {
+                setPosts([...posts, data])
+                showingForm(true)
+            }
         })
     }
 
@@ -68,7 +73,7 @@ function UserProvider({children}) {
                 setUser(updatedUser)
                 setErrors([])
                 isCommenting(true)
-                console.log(user)
+                console.log(updatedUser)
             }
         })
         .catch(error => console.log(error))
@@ -77,12 +82,14 @@ function UserProvider({children}) {
 
     const login = (user) => {
         setUser(user)
+        fetchPosts()
         setLoggedIn(true)
         setErrors([])
     }
 
     const signup = (user) => {
         setUser(user)
+        fetchPosts()
         setLoggedIn(true)
         setErrors([])
     }

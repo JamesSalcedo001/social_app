@@ -1,40 +1,34 @@
 import { useContext, useState } from "react";
 import { UserContext } from "./context/user";
 
-function NewPost() {
-    const [formData, setFormData] = useState({
-        title: "",
-        content: "",
-        image: ""
-    })
+function NewPost({showingForm}) {
+    const [title, setTitle] = useState("")
+    const [content, setContent] = useState("")
+    const [image, setImage] = useState("")
+  
     const { addPost, errors} = useContext(UserContext)
-    const {title, content, image} = formData
 
    const submit = (e) => {
     e.preventDefault()
-    addPost({
-        title,
-        content,
-        image
-    })
+        addPost({
+            title: title,
+            content: content,
+            image: image
+        }, showingForm)
    }
 
-    const changeHandler = (e) => {
-        const {name, value} = e.target
-        setFormData({...formData, [name]: value})
-    }
-
+ 
     return (
         <div>
             <form onSubmit={submit} id="postForm">
                 <label htmlFor="title">Title</label>
-                <input placeholder="title" type="text" value={title} onChange={changeHandler} name="title"/>
+                <input placeholder="title" type="text" value={title} onChange={(e) => setTitle(e.target.value) } name="title"/>
 
                 <label htmlFor="content">Content</label>
-                <input placeholder="content" type="text" value={content} onChange={changeHandler} name="content"/>
+                <input placeholder="content" type="text" value={content} onChange={(e) => setContent(e.target.value) } name="content"/>
 
                 <label htmlFor="image">Image URL</label>
-                <input placeholder="image" type="text" value={image} onChange={changeHandler} name="image"/>
+                <input placeholder="image" type="text" value={image} onChange={(e) => setImage(e.target.value) } name="image"/>
 
                 <input type="submit" value="Post!"/>
             </form>

@@ -191,8 +191,11 @@ code {
 } 
 
 .commentCard {
-  background-color:rgb(162, 255, 0);
-  width: 70vw;
+  background-color:rgb(187, 197, 170);
+  min-width: 30vw;
+  height: auto;
+  border-radius: 2vh;
+  font-size: 10pt;
 }
 
 .postComments {
@@ -204,4 +207,14 @@ code {
   width: 30vw;
   border-radius: 3vh;
   padding: 1vh;
+  overflow: scroll;
+}
+
+#hi {
+  margin-top: 30vh;
+}
+
+#hello {
+  margin-top: 30vh;
+  margin-bottom: 10vh;
 }

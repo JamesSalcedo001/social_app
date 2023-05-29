@@ -3,7 +3,7 @@ import { UserContext } from "./context/user";
 
 function CommentForm({addingNewComment}) {
     const [commentBody, setCommentBody] = useState("")
-    const [post, setPost] = useState(0)
+    const [postId, setPostId] = useState(1)
 
     const { user, posts, addComment, errors} = useContext(UserContext)
 
@@ -11,7 +11,7 @@ function CommentForm({addingNewComment}) {
     e.preventDefault()
     addComment({
         body: commentBody,
-        post_id: post
+        post_id: postId
     },    
     addingNewComment
      )
@@ -35,11 +35,11 @@ const postList = checker(posts).map(p =>
 
     return (
         <div>
-            <form onSubmit={submit} >
+            <form id="hello" onSubmit={submit} >
                 <label htmlFor="body">Comment</label>
                 <input placeholder="type comment here" type="text" value={commentBody} onChange={(e) => setCommentBody(e.target.value)} name="body"/>
 
-                <select name="post_id" value={user.post_id} onChange={(e) => setPost(e.target.value)}>{postList}</select>
+                <select name="post_id" value={user.postId} onChange={(e) => setPostId(parseFloat(e.target.value))}>{postList}</select>
 
                 <input type="submit" value="Comment!"/>
             </form>

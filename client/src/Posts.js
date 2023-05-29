@@ -1,22 +1,35 @@
-import { useContext } from "react";
+import { useContext, useState} from "react";
 import { UserContext } from "./context/user";
 import PostCard from "./PostCard"
 import NewPost from "./NewPost";
 
 function Posts() {
     const {posts, loggedIn} = useContext(UserContext)
+    const [showForm, setShowForm] = useState(false)
+    
+    function showingForm() {
+        setShowForm(false)
+    }
 
     if (loggedIn) {
+
         const postMap = posts.map(post => <PostCard key={post.id} post={post}/>)
         return (
             <div id="postContainer">
-                <NewPost/>
-                {postMap}
+                <div>
+                    { showForm ? <NewPost showingForm={showingForm}/> : <button onClick={() => setShowForm(true)}>Add Post!</button>}
+                </div>
+
+                <div>
+                    {postMap}
+                </div>
             </div>
         )
     } else {
         return (
-            <h1>Please Login or Sign Up</h1>
+            <>
+                <h1>Please Login or Sign Up</h1>
+            </>
         )
     }
 }
