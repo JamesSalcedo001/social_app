@@ -2,12 +2,12 @@ import { useContext, useState } from "react";
 import { UserContext } from "./context/user";
 
 function NewPost({showingForm}) {
+    const { addPost, errors} = useContext(UserContext)
+
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     const [image, setImage] = useState("")
   
-    const { addPost, errors} = useContext(UserContext)
-
    const submit = (e) => {
     e.preventDefault()
         addPost({

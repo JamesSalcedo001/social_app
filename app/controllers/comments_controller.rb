@@ -7,16 +7,18 @@ class CommentsController < ApplicationController
 
     def index
         comments = @current_user.comments
+        # comments = Comment.all
         render json: comments
     end
 
     def create
         comment = @current_user.comments.create!(comment_params)
         render json: comment
+        # comment = Comment.create!(comment_params)
+        # render json: comment, status: :ok
     end 
 
     def update
-        @comment
         @comment.update(comment_params)
         render json: @comment
     end

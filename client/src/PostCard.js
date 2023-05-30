@@ -1,7 +1,9 @@
 
-function PostCard({post}) {
 
-    const {title, content, image, likes} = post
+function PostCard({post}) {
+    
+    const {title, content, image, likes, comments} = post
+    const postComments = comments.map((c) => <li key={c.id}>{c.body}</li>)
  
         return (
             <div className="postCard">
@@ -9,6 +11,7 @@ function PostCard({post}) {
                 <img className="postImage" alt="post" src={image}/>
                 <h5>{content}</h5>
                 <h5>likes: {likes}</h5>
+                {postComments}
             </div>
         )
 }

@@ -4,14 +4,14 @@ import { UserContext } from "./context/user";
 function CommentForm({addingNewComment}) {
     const [commentBody, setCommentBody] = useState("")
     const [postId, setPostId] = useState(1)
-
     const { user, posts, addComment, errors} = useContext(UserContext)
 
    const submit = (e) => {
     e.preventDefault()
     addComment({
         body: commentBody,
-        post_id: postId
+        post_id: postId,
+        user_id: user.id
     },    
     addingNewComment
      )

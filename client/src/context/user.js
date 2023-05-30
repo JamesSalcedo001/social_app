@@ -56,6 +56,7 @@ function UserProvider({children}) {
     }
 
 
+
     const addComment = (newComment, isCommenting) => {
         fetch("/comments", {
             method: "POST",
@@ -69,16 +70,62 @@ function UserProvider({children}) {
             if (data.errors) {
                 setErrors(data.errors)
             } else {
-                const updatedUser = { ...user, comments: [...user.comments, data] }
+                const updatedUser = { 
+                    ...user, 
+                    comments: [...user.comments, data]
+                }
+              
                 setUser(updatedUser)
                 setErrors([])
                 isCommenting(true)
-                console.log(updatedUser)
             }
         })
         .catch(error => console.log(error))
     }
 
+
+    const removeComment = (id) => {
+        const commentList = user.comments.filter(c => c.id !== id)
+        const updatedUser = { ...user, comments: commentList}
+        return updatedUser
+    }
+
+    const deleteComment = (id) => {
+        fetch(`/comments/${id}`, {
+            method: "DELETE",
+        })
+        .then(() => {
+            const updatedUser = removeComment(id)
+            setUser(updatedUser)
+        })
+        .catch(error => console.log(error))
+    }
+
+
+    const updateCheck = (updatedComm)=> {
+        const updatedCommList = user.comments.map(comm => {
+            if (comm.id === updatedComm.id) {
+                return updatedComm
+            } else {
+                return comm
+            }
+        })
+        const updatedUser = { ...user, comments: updatedCommList}
+        setUser(updatedUser)
+    }
+
+    const updateComment = (id, comment) => {
+        fetch(`/comments/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(comment)
+        })
+        .then(res => res.json())
+        .then(data => updateCheck(data))
+        .catch(error => console.log(error))
+    }
 
     const login = (user) => {
         setUser(user)
@@ -102,7 +149,7 @@ function UserProvider({children}) {
 
 
     return (
-        <UserContext.Provider value={{user, posts, addComment, loggedIn, logout, signup, login, errors, setErrors, addPost}}>
+        <UserContext.Provider value={{user, posts, addComment, loggedIn, logout, signup, login, errors, setErrors, updateComment, deleteComment, addPost}}>
             {children}
         </UserContext.Provider>
     )
