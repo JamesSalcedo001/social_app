@@ -1,10 +1,9 @@
-import { useState } from "react";
+
 
 function PostCard({post}) {
     
-    const {title, content, image, likes} = post
- 
-
+    const {title, content, image, likes } = post
+  
         return (
             <div className="postCard">
                 <h1>{title}</h1>

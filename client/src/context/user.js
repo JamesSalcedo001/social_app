@@ -77,6 +77,7 @@ function UserProvider({children}) {
             if (data.errors) {
                 setErrors(data.errors)
             } else {
+                console.log(data)
                 // const updatedUser = { 
                 //     ...user, 
                 //     comments: [...user.comments, data]
@@ -107,15 +108,16 @@ function UserProvider({children}) {
 
 
     const updateCheck = (updatedComm)=> {
-        const updatedCommList = user.comments.map(comm => {
+        const updatedCommList = comments.map(comm => {
             if (comm.id === updatedComm.id) {
                 return updatedComm
             } else {
                 return comm
             }
         })
-        const updatedUser = { ...user, comments: updatedCommList}
-        setUser(updatedUser)
+        // const updatedUser = { ...user, comments: updatedCommList}
+        // setUser(updatedUser)
+        setComments(updatedCommList)
     }
 
     const updateComment = (id, comment) => {

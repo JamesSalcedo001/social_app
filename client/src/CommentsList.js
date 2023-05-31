@@ -8,7 +8,7 @@ import EditCommentForm from "./EditCommentForm";
 
 
 function CommentsList() {
-    const {user, loggedIn, comments } = useContext(UserContext)
+    const {loggedIn, comments } = useContext(UserContext)
     const [commenting, setCommenting] = useState(false)
     const [showEditing, setShowEditing] = useState(false)
     const [targetComment, setTargetComment] = useState(null)
@@ -28,8 +28,7 @@ function CommentsList() {
     }
 
     if (loggedIn) {
-        // const userComments = user?.comments?.map(comment => <CommentCard key={comment.id} comment={comment} 
-        //     targeted={() => editClick(comment)} />)
+       
         const commentMap = comments.map(comment => <CommentCard key={comment.id} comment={comment} targeted={() => editClick(comment)} />)
         return (
             <div >
@@ -37,10 +36,9 @@ function CommentsList() {
                     {commenting ? <CommentForm addingNewComment={addingNewComment}/> : <button id="hi" onClick={() => setCommenting(true)}>Add Comment</button>}
                 </div>
                 <div>
-                    {showEditing ? <EditCommentForm comment={targetComment} editOff={editOff}/> : null}
+                    {showEditing ? <EditCommentForm targetComment={targetComment} editOff={editOff}/> : null}
                 </div>
                 <div>
-                    {/* <ul className="commentCards">{userComments}</ul> */}
                     <ul className="commentCards">{commentMap}</ul>
                 </div>
             </div>

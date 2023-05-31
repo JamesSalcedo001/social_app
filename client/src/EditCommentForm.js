@@ -1,17 +1,17 @@
 import { useContext,useEffect, useState } from "react";
 import { UserContext } from "./context/user";
 
-function EditCommentForm({comment, editOff}) {
+function EditCommentForm({targetComment, editOff}) {
     const {user, updateComment} = useContext(UserContext)
-    const [commentBody, setCommentBody] = useState(comment?.body || "")
+    const [commentBody, setCommentBody] = useState(targetComment?.body || "")
     const [editing, setEditing] = useState(false)
 
     const submit = (e) => {
         e.preventDefault()
-        updateComment(comment.id, {
+        updateComment(targetComment.id, {
             body: commentBody,
             user_id: user.id,
-            id: comment.id
+            id: targetComment.id
         })
         setEditing(false)
         editOff()
@@ -23,7 +23,7 @@ function EditCommentForm({comment, editOff}) {
         }
     },[])
 
-    if (comment === null) {
+    if (targetComment === null) {
         return null
     }
 
