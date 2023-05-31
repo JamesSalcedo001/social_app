@@ -5,6 +5,7 @@ function CommentCard({comment, targeted}) {
     const {deleteComment} = useContext(UserContext)
 
     const {body, likes, user, post, id} = comment
+    // console.log(comment)
 
     const clickHandlerDelete = () => {deleteComment(id)}
     const editClickHandler = () => {targeted(comment)}

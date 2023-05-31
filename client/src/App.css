@@ -198,17 +198,6 @@ code {
   font-size: 10pt;
 }
 
-.postComments {
-  margin: auto;
-  margin-top: 10vh;
-  margin-bottom: 5vh;
-  background-color: rgb(29, 189, 17);
-  height: 60vh;
-  width: 30vw;
-  border-radius: 3vh;
-  padding: 1vh;
-  overflow: scroll;
-}
 
 #hi {
   margin-top: 30vh;

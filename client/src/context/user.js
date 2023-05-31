@@ -10,6 +10,7 @@ function UserProvider({children}) {
     const [posts, setPosts] = useState([])
     const [loggedIn, setLoggedIn] = useState(false)
     const [errors, setErrors] = useState([])
+    const [comments, setComments] = useState([])
 
     useEffect(() => {
         fetch("/me")
@@ -22,6 +23,7 @@ function UserProvider({children}) {
             } else {
                 setLoggedIn(true)
                 fetchPosts()
+                fetchComments()
             }
         })
     },[])
@@ -34,6 +36,12 @@ function UserProvider({children}) {
         fetch("/posts")
         .then(res => res.json())
         .then(data => setPosts(data))
+    }
+
+    const fetchComments = () => {
+        fetch("/comments")
+        .then(res => res.json())
+        .then(data => setComments(data))
     }
 
     const addPost = (post, showingForm) => {
@@ -56,7 +64,6 @@ function UserProvider({children}) {
     }
 
 
-
     const addComment = (newComment, isCommenting) => {
         fetch("/comments", {
             method: "POST",
@@ -70,12 +77,12 @@ function UserProvider({children}) {
             if (data.errors) {
                 setErrors(data.errors)
             } else {
-                const updatedUser = { 
-                    ...user, 
-                    comments: [...user.comments, data]
-                }
-              
-                setUser(updatedUser)
+                // const updatedUser = { 
+                //     ...user, 
+                //     comments: [...user.comments, data]
+                // }
+                // setUser(updatedUser)
+                setComments([...comments, data])
                 setErrors([])
                 isCommenting(true)
             }
@@ -84,19 +91,16 @@ function UserProvider({children}) {
     }
 
 
-    const removeComment = (id) => {
-        const commentList = user.comments.filter(c => c.id !== id)
-        const updatedUser = { ...user, comments: commentList}
-        return updatedUser
-    }
+  
+    const removeComment = (id) => setComments(current => current.filter(c => c.id !== id))
+
 
     const deleteComment = (id) => {
         fetch(`/comments/${id}`, {
             method: "DELETE",
         })
         .then(() => {
-            const updatedUser = removeComment(id)
-            setUser(updatedUser)
+            removeComment(id)
         })
         .catch(error => console.log(error))
     }
@@ -130,6 +134,7 @@ function UserProvider({children}) {
     const login = (user) => {
         setUser(user)
         fetchPosts()
+        fetchComments()
         setLoggedIn(true)
         setErrors([])
     }
@@ -137,6 +142,7 @@ function UserProvider({children}) {
     const signup = (user) => {
         setUser(user)
         fetchPosts()
+        fetchComments()
         setLoggedIn(true)
         setErrors([])
     }
@@ -149,7 +155,7 @@ function UserProvider({children}) {
 
 
     return (
-        <UserContext.Provider value={{user, posts, addComment, loggedIn, logout, signup, login, errors, setErrors, updateComment, deleteComment, addPost}}>
+        <UserContext.Provider value={{user, posts, comments, addComment,loggedIn, logout, signup, login, errors, setErrors, setPosts, updateComment, deleteComment, addPost}}>
             {children}
         </UserContext.Provider>
     )
