@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
 import { UserContext } from "./context/user";
 
-function CommentForm({addingNewComment}) {
+function CommentForm({toggleCommenting}) {
     const [commentBody, setCommentBody] = useState("")
     const { user, posts, addComment, errors} = useContext(UserContext)
     const [postId, setPostId] = useState(1)
+   
 
    const submit = (e) => {
     e.preventDefault()
@@ -13,38 +14,24 @@ function CommentForm({addingNewComment}) {
         post_id: postId,
         user_id: user.id
     },    
-    addingNewComment
+    toggleCommenting
      )
    }
 
-   function checker(extras) {
-    const check = {}
-    const final = []
-    extras.forEach(post => {
-        if (!check[post.id]) {
-            check[post.id] = true
-            final.push(post)
-        }
-    })
-    return final
-   }
 
-const postList = checker(posts).map(p => 
-    <option key={p.id} value={p.id}>{p.title}</option>
-    )
+    const postList = posts.map(p => <option key={p.id} value={p.id}>{p.title}</option>)
 
 
     return (
         <div>
-            <form id="hello" onSubmit={submit} >
-                <label htmlFor="body">Comment</label>
-                <input placeholder="type comment here" type="text" value={commentBody} onChange={(e) => setCommentBody(e.target.value)} name="body"/>
+            <form id="commentForm" onSubmit={submit} >
+                <input className="commentInput" placeholder="type comment here" type="text" value={commentBody} onChange={(e) => setCommentBody(e.target.value)} name="body"/>
 
-                <select name="post_id" value={postId} onChange={(e) => setPostId(parseFloat(e.target.value))}>{postList}</select>
+                <select className="commentInput" name="post_id" value={postId} onChange={(e) => setPostId(parseFloat(e.target.value))}>{postList}</select>
 
-                <input type="submit" value="Comment!"/>
+                <input className="commentInput" type="submit" value="Comment!"/>
             </form>
-            {errors}
+            <h1>{errors}</h1>
         </div>
     )
 }

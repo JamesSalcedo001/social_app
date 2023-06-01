@@ -35,7 +35,7 @@ function Login() {
                     username: "",
                     password: ""
                 })
-                const errorList = user.errors.map((e) => <li key={e}>{e}</li>)
+                const errorList = user.errors.map((e) => <h2 key={e}>{e}</h2>)
                 setErrors(errorList)
             }
         })
@@ -57,7 +57,7 @@ function Login() {
 
                 <input type="submit" value="Log In!"/>
             </form>
-            {errors ? <h5>{errors}</h5> : null}
+            {errors ? <ul className="errors">{errors}</ul> : null}
         </div>
     )
 }

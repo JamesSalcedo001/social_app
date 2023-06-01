@@ -81,7 +81,8 @@ class CommentsController < ApplicationController
 
     def is_owner?
         permitted = @comment.user_id == @current_user.id
-        render json: {errors: {user: "does not own this!"}}, status: :forbidden unless permitted
+        render json: {errors: ["current user does not own this!"]}, status: :forbidden unless permitted
+        # render json: {errors: {user: "does not own this!"}}, status: :forbidden unless permitted
     end
 
 end

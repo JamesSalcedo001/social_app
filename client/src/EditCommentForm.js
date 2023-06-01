@@ -1,11 +1,14 @@
 import { useContext,useEffect, useState } from "react";
 import { UserContext } from "./context/user";
 
+
+
 function EditCommentForm({targetComment, editOff}) {
-    const {user, updateComment} = useContext(UserContext)
+    const {user, updateComment, errors} = useContext(UserContext)
     const [commentBody, setCommentBody] = useState(targetComment?.body || "")
     const [editing, setEditing] = useState(false)
 
+ 
     const submit = (e) => {
         e.preventDefault()
         updateComment(targetComment.id, {
@@ -30,11 +33,13 @@ function EditCommentForm({targetComment, editOff}) {
     if(!editing) {
         return (
             <div>
+                {errors ? <ul className="errors">{errors}</ul> : null}
                 <form onSubmit={submit}>
                     <label>Edit Comment</label>
                     <input type="text" name="body" value={commentBody} onChange={(e) => setCommentBody(e.target.value)}/>
                     <button type="submit">Update!</button>
                 </form>
+                
             </div>
         )
     }

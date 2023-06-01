@@ -18,6 +18,7 @@ function NewPost({showingForm}) {
    }
 
  
+   const errorList = errors.map(e => <h2 key={e}>{e}</h2>)
     return (
         <div>
             <form onSubmit={submit} id="postForm">
@@ -32,7 +33,10 @@ function NewPost({showingForm}) {
 
                 <input type="submit" value="Post!"/>
             </form>
-            {errors}
+            <ul className="errors">
+                {errorList}
+            </ul>
+            
         </div>
     )
 }

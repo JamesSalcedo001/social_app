@@ -38,7 +38,7 @@ function Signup() {
                     password: "",
                     avatar: ""
                 })
-                const errorList = user.errors.map(e => <li key={e}>{e}</li>)
+                const errorList = user.errors.map(e => <h1 key={e}>{e}</h1>)
                 setErrors(errorList)
             }
         })
@@ -63,7 +63,7 @@ function Signup() {
 
                 <input type="submit" value="Sign Up!"/>
             </form>
-            {errors ? <ul>{errors}</ul> : null}
+            {errors ? <ul className="errors">{errors}</ul> : null}
         </div>
     )
 }

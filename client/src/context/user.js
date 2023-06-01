@@ -12,6 +12,7 @@ function UserProvider({children}) {
     const [errors, setErrors] = useState([])
     const [comments, setComments] = useState([])
 
+
     useEffect(() => {
         fetch("/me")
         .then(res => res.json())
@@ -37,6 +38,7 @@ function UserProvider({children}) {
         .then(res => res.json())
         .then(data => setPosts(data))
     }
+
 
     const fetchComments = () => {
         fetch("/comments")
@@ -77,12 +79,6 @@ function UserProvider({children}) {
             if (data.errors) {
                 setErrors(data.errors)
             } else {
-                console.log(data)
-                // const updatedUser = { 
-                //     ...user, 
-                //     comments: [...user.comments, data]
-                // }
-                // setUser(updatedUser)
                 setComments([...comments, data])
                 setErrors([])
                 isCommenting(true)
@@ -115,8 +111,6 @@ function UserProvider({children}) {
                 return comm
             }
         })
-        // const updatedUser = { ...user, comments: updatedCommList}
-        // setUser(updatedUser)
         setComments(updatedCommList)
     }
 
@@ -129,8 +123,17 @@ function UserProvider({children}) {
             body: JSON.stringify(comment)
         })
         .then(res => res.json())
-        .then(data => updateCheck(data))
-        .catch(error => console.log(error))
+        .then(data => {
+            if(data.errors) {
+                setErrors(data.errors)
+                console.log(data.errors)
+            } else {
+                updateCheck(data)
+            }
+        })
+        // .then(res => res.json())
+        // .then(data => updateCheck(data))
+        // .catch(error => console.log(error))
     }
 
     const login = (user) => {
@@ -157,7 +160,7 @@ function UserProvider({children}) {
 
 
     return (
-        <UserContext.Provider value={{user, posts, comments, addComment,loggedIn, logout, signup, login, errors, setErrors, setPosts, updateComment, deleteComment, addPost}}>
+        <UserContext.Provider value={{user, posts, comments, addComment,loggedIn, logout, signup, login, errors, setErrors, updateComment, deleteComment, addPost}}>
             {children}
         </UserContext.Provider>
     )

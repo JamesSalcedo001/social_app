@@ -8,12 +8,12 @@ import EditCommentForm from "./EditCommentForm";
 
 
 function CommentsList() {
-    const {loggedIn, comments } = useContext(UserContext)
+    const {loggedIn, comments} = useContext(UserContext)
     const [commenting, setCommenting] = useState(false)
     const [showEditing, setShowEditing] = useState(false)
     const [targetComment, setTargetComment] = useState(null)
 
-    function addingNewComment() {
+    function toggleCommenting() {
         setCommenting(false)
     }
 
@@ -30,10 +30,11 @@ function CommentsList() {
     if (loggedIn) {
        
         const commentMap = comments.map(comment => <CommentCard key={comment.id} comment={comment} targeted={() => editClick(comment)} />)
+
         return (
-            <div >
-                <div>
-                    {commenting ? <CommentForm addingNewComment={addingNewComment}/> : <button id="hi" onClick={() => setCommenting(true)}>Add Comment</button>}
+            <div className="commentContainer">
+                <div id="buttonDiv">
+                    {commenting ? <CommentForm toggleCommenting={toggleCommenting}/> : <button id="commentFormButton" onClick={() => setCommenting(true)}>Add Comment</button>}
                 </div>
                 <div>
                     {showEditing ? <EditCommentForm targetComment={targetComment} editOff={editOff}/> : null}
