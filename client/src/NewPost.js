@@ -23,15 +23,15 @@ function NewPost({showingForm}) {
         <div>
             <form onSubmit={submit} id="postForm">
                 <label htmlFor="title">Title</label>
-                <input placeholder="title" type="text" value={title} onChange={(e) => setTitle(e.target.value) } name="title"/>
+                <input className="postFormInput" placeholder="title" type="text" value={title} onChange={(e) => setTitle(e.target.value) } name="title"/>
 
                 <label htmlFor="content">Content</label>
-                <input placeholder="content" type="text" value={content} onChange={(e) => setContent(e.target.value) } name="content"/>
+                <input className="postFormInput" placeholder="content" type="text" value={content} onChange={(e) => setContent(e.target.value) } name="content"/>
 
                 <label htmlFor="image">Image URL</label>
-                <input placeholder="image" type="text" value={image} onChange={(e) => setImage(e.target.value) } name="image"/>
+                <input className="postFormInput" placeholder="image" type="text" value={image} onChange={(e) => setImage(e.target.value) } name="image"/>
 
-                <input type="submit" value="Post!"/>
+                <input className="postFormInput" type="submit" value="Post!"/>
             </form>
             <ul className="errors">
                 {errorList}

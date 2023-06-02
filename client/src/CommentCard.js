@@ -4,7 +4,7 @@ import { UserContext } from "./context/user";
 function CommentCard({comment, targeted}) {
     const {deleteComment, errors} = useContext(UserContext)
 
-    const {body, likes, user, post, id} = comment
+    const {body,user, post, id} = comment
     console.log(comment)
 
     const clickHandlerDelete = () => {deleteComment(id)}

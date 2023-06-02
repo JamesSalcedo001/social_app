@@ -9,14 +9,10 @@ import EditCommentForm from "./EditCommentForm";
 
 function CommentsList() {
     const {loggedIn, comments} = useContext(UserContext)
-    const [commenting, setCommenting] = useState(false)
     const [showEditing, setShowEditing] = useState(false)
     const [targetComment, setTargetComment] = useState(null)
 
-    function toggleCommenting() {
-        setCommenting(false)
-    }
-
+  
     const editClick = (comment) => {
         setTargetComment(comment)
         setShowEditing(true)
@@ -33,12 +29,14 @@ function CommentsList() {
 
         return (
             <div className="commentContainer">
-                <div id="buttonDiv">
-                    {commenting ? <CommentForm toggleCommenting={toggleCommenting}/> : <button id="commentFormButton" onClick={() => setCommenting(true)}>Add Comment</button>}
+                <div>
+                     <CommentForm />
                 </div>
+                
                 <div>
                     {showEditing ? <EditCommentForm targetComment={targetComment} editOff={editOff}/> : null}
                 </div>
+
                 <div>
                     <ul className="commentCards">{commentMap}</ul>
                 </div>

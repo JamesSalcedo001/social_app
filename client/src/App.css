@@ -1,4 +1,8 @@
-.App {
+html {
+  background-color: black;
+}
+
+ .App {
   text-align: center;
   min-height: 100vh;
   display: flex;
@@ -6,6 +10,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  opacity: 70%;
 }
 
 body {
@@ -15,7 +20,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #282c34;
+  background-image: url("https://wallpaperset.com/w/full/c/1/4/427159.jpg");
+  /* opacity: 80%; */
 }
 
 code {
@@ -66,31 +72,47 @@ code {
   margin: auto;
   margin-top: 10vh;
   margin-bottom: 5vh;
-  background-color: rgb(68, 158, 154);
-  height: 60vh;
-  width: 30vw;
+  background-color: rgb(249, 253, 255);
+  height: 60%;
+  width: 30%;
+  font-size:75%;
   border-radius: 3vh;
   padding: 1vh;
 }
 
 .header {
-  background-color: rgb(13, 18, 109);
+  background-color: rgb(63, 134, 179);
   position: absolute;
   top: 0;
   width: 100vw;
   padding: 1vh;
   height: fit-content;
   color: rgb(12, 173, 222);
+  margin-bottom: 50vh;
 }
 
 #postForm {
-  background-color: rgb(185, 194, 185);
-  height: 10vh;
-  width: 45vw;
+  background-color: rgb(2, 7, 107);
+  height: auto;
+  width: 40%;
   border-radius: 1vh;
+  display: flex;
+  flex-direction: column;
   margin: auto;
+  color: rgb(12, 173, 222);
+  padding: 1vw;
 }
 
+.postFormInput {
+  border-radius: 2vh;
+  font-size: larger;
+  text-align: center;
+  padding: 2vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  background-color: rgb(78, 219, 216);
+  min-width: 15vw;
+}
 
 
 #avatar {
@@ -100,7 +122,9 @@ code {
 }
 
 .postImage {
-  height: 10vmin;
+  height: 50%;
+  width: 50%;
+  border-radius: 3vh;
 }
 
 .headerButton {
@@ -172,9 +196,8 @@ code {
     transform: rotate(360deg);
   }
 } 
-
+/* 
 .commentCard {
-  /* margin-top: 20vh; */
   color: white;
   background-color:rgb(26, 119, 205);
   min-width: 10vmin;
@@ -219,7 +242,7 @@ code {
   margin-inline: 1vw;
   line-height: 1.1em;
   min-width: 150px;
-}
+} */
 
 .errors {
   color: red;
@@ -234,23 +257,63 @@ code {
 }
 
 #postCommentImage {
-  height: 40vmin;
-  width: 30vw;
+  /* height: 40vmin;
+  width: 30vw; */
+  height: 50%;
+  width: 50%;
+  border-radius: 3vh;
 }
 
-/* .commentButton {
-  background-color: rgb(10, 41, 70);
-  color: rgb(12, 173, 222);
-  border-radius: 1.8vh;
-  min-width: 100px;
-  line-height: 1.1em;
-  font-weight: bolder;
-  font-size: large;
-  margin-inline: 0.5vw;
-} */
 
 
+.commentContainer {
+  margin-top: 20vh;
+  padding: 1vh;
+  height: auto;
+  width: 100vw;
+  display: grid;
+  gap: 5vh;
+  grid-template-rows: repeat(1, 1fr);
+}
 
+.commentCard {
+  margin: auto;
+  /* margin-top: 10vh; */
+  margin-bottom: 5vh;
+  background-color: rgb(255, 255, 255);
+  /* height: auto; */
+  /* width: 50vw; */
+  border-radius: 3vh;
+  height: 60%;
+  width: 30%;
+  font-size:75%;
+  padding: 1vh;
+}
+
+  #commentForm {
+    background-color: rgb(15, 12, 71);
+    padding: 1vw;
+    height: auto;
+    width: 60%;
+    border-radius: 3vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .commentInput {
+    border-radius: 2vh;
+    font-size: larger;
+    text-align: center;
+    padding: 2vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    background-color: rgb(78, 219, 216);
+    min-width: 15vw;
+  }
+
+/* 
 .commentContainer {
 margin-top: 30vh;
 width: 100vw;
@@ -260,6 +323,21 @@ align-items: center;
 grid-template-rows: repeat(1, 1fr);
 padding: 5vw;
 gap: 5vh;
-/* justify-content: center; */
+} 
+
+
+ .commentButton {
+  background-color: rgb(10, 41, 70);
+  color: rgb(12, 173, 222);
+  border-radius: 1.8vh;
+  min-width: 100px;
+  line-height: 1.1em;
+  font-weight: bolder;
+  font-size: large;
+  margin-inline: 0.5vw;
 }
+ */
+
+
+
 

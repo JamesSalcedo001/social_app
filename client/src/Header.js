@@ -31,7 +31,7 @@ function Header() {
                 </NavLink>
 
                 <NavLink to="/comment_list">
-                    <button className="headerButton">See Comments!</button>
+                    <button className="headerButton">Comments!</button>
                 </NavLink>
             </div>
         )
