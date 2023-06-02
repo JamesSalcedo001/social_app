@@ -102,6 +102,17 @@ code {
   margin-bottom: 50vh;
 }
 
+
+#postFormButton {
+  color: rgb(0, 253, 51);
+  background-color: rgb(35, 38, 50);
+  box-shadow: -4px 5px 25px rgb(249, 249, 249);
+  border-radius: 2vh;
+  font-size: 60%;
+  font-weight: bolder;
+  padding: 1.5vh;
+}
+
 #postForm {
   font-weight: bolder;
   font-size: 70%;
@@ -114,15 +125,21 @@ code {
   border-radius: 3vh;
   margin: auto;
   box-shadow: -4px 5px 25px rgb(249, 249, 249);
-  /* background-color: rgb(2, 7, 107);
-  height: auto;
-  width: 40%;
-  border-radius: 1vh;
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  color: rgb(12, 173, 222);
-  padding: 1vw; */
+  opacity: 0;
+  animation: fade 0.6s ease-in 0.09s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+  0%{
+    opacity: 0
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1
+  }
 }
 
 .postFormInput {
@@ -198,6 +215,9 @@ code {
   /* color: rgb(244, 244, 244);
   background-color: rgb(2, 7, 98); */
   transition: 0.3s;
+  opacity: 0;
+  animation: fade 0.8s ease-in 0.12s;
+  animation-fill-mode: forwards;
 }
 
 .home-button:hover {
@@ -330,15 +350,9 @@ code {
   border-radius: 3vh;
   margin: auto;
   box-shadow: -4px 5px 25px rgb(249, 249, 249);
-    /* background-color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 1vh;
-    height: auto;
-    width: 30%;
-    border-radius: 3vh;
-    margin: auto;
-    box-shadow: -4px 5px 25px rgb(249, 249, 249); */
+  opacity: 0;
+  animation: fade 0.8s ease-in 0.09s;
+  animation-fill-mode: forwards;
   }
 
   .commentInput {
@@ -406,6 +420,17 @@ code {
     width: 40%;
     border-radius: 36vh;
   }
+
+  #postFormButton {
+    color: rgb(0, 253, 51);
+    background-color: rgb(35, 38, 50);
+    box-shadow: -4px 5px 25px rgb(249, 249, 249);
+    border-radius: 2vh;
+    font-size: 60%;
+    font-weight: bolder;
+    padding: 1.5vh;
+  }
+
 
 
   .loginInput {

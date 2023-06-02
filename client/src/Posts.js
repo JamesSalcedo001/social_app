@@ -17,7 +17,7 @@ function Posts() {
         return (
             <div id="postContainer">
                 <div>
-                    { showForm ? <NewPost showingForm={showingForm}/> : <button onClick={() => setShowForm(true)}>Add Post!</button>}
+                    { showForm ? <NewPost showingForm={showingForm}/> : <button id="postFormButton" onClick={() => setShowForm(true)}>Add Post!</button>}
                 </div>
 
                 <div>
