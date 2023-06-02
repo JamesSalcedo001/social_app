@@ -37,7 +37,7 @@ function Header() {
         )
     } else {
         return (
-            <div className="header">
+            <div id="headerHome">
                 <h3>Welcome to Space Base!</h3>
             </div>
         )

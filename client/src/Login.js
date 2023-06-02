@@ -48,14 +48,14 @@ function Login() {
 
     return (
         <div>
-            <form onSubmit={submit}>
+            <form id="loginForm" onSubmit={submit}>
                 <label htmlFor="username">Username</label>
-                <input type="text" name="username" onChange={changeHandler} value={username} />
+                <input className="loginInput" type="text" name="username" onChange={changeHandler} value={username} />
 
                 <label htmlFor="password">Password</label>
-                <input type="password" name="password" onChange={changeHandler} value={password} />
+                <input className="loginInput" type="password" name="password" onChange={changeHandler} value={password} />
 
-                <input type="submit" value="Log In!"/>
+                <input className="loginInput" type="submit" value="Log In!"/>
             </form>
             {errors ? <ul className="errors">{errors}</ul> : null}
         </div>
