@@ -98,11 +98,23 @@ code {
   width: 100vw;
   height: fit-content;
   color: rgb(255, 255, 255);
-  font-size: 60%;
+  font-size: 70%;
+  margin-bottom: 50vh;
 }
 
 #postForm {
-  background-color: rgb(2, 7, 107);
+  font-weight: bolder;
+  font-size: 70%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2vw;
+  height: auto;
+  width: 30%;
+  border-radius: 3vh;
+  margin: auto;
+  box-shadow: -4px 5px 25px rgb(249, 249, 249);
+  /* background-color: rgb(2, 7, 107);
   height: auto;
   width: 40%;
   border-radius: 1vh;
@@ -110,18 +122,27 @@ code {
   flex-direction: column;
   margin: auto;
   color: rgb(12, 173, 222);
-  padding: 1vw;
+  padding: 1vw; */
 }
 
 .postFormInput {
-  border-radius: 2vh;
+  border-radius: 3vh;
+  font-size: 70%;
+  font-weight: bolder;
+  text-align: center;
+  padding: 1vh;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+  color: rgb(0, 253, 51);
+  background-color: rgb(35, 38, 50);
+  /* border-radius: 2vh;
   font-size: larger;
   text-align: center;
   padding: 2vh;
   margin-top: 2vh;
   margin-bottom: 2vh;
   background-color: rgb(78, 219, 216);
-  min-width: 15vw;
+  min-width: 15vw; */
 }
 
 
@@ -266,8 +287,6 @@ code {
 }
 
 #postCommentImage {
-  /* height: 40vmin;
-  width: 30vw; */
   height: 50%;
   width: 50%;
   border-radius: 3vh;
@@ -300,7 +319,18 @@ code {
 }
 
   #commentForm {
-    background-color: white;
+    font-weight: bolder;
+  font-size: 70%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2vw;
+  height: auto;
+  width: 30%;
+  border-radius: 3vh;
+  margin: auto;
+  box-shadow: -4px 5px 25px rgb(249, 249, 249);
+    /* background-color: white;
     display: flex;
     flex-direction: column;
     padding: 1vh;
@@ -308,11 +338,20 @@ code {
     width: 30%;
     border-radius: 3vh;
     margin: auto;
-    box-shadow: -4px 5px 25px rgb(249, 249, 249);
+    box-shadow: -4px 5px 25px rgb(249, 249, 249); */
   }
 
   .commentInput {
-    border-radius: 2vh;
+    border-radius: 3vh;
+    font-size: 70%;
+    font-weight: bolder;
+    text-align: center;
+    padding: 1vh;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    color: rgb(0, 253, 51);
+    background-color: rgb(35, 38, 50);
+    /* border-radius: 2vh;
     font-size: large;
     font-weight: bolder;
     text-align: center;
@@ -320,15 +359,28 @@ code {
     margin-top: 1vh;
     margin-bottom: 1vh;
     background-color: rgb(0, 20, 109);
-    color: rgb(0, 229, 255);
+    color: rgb(0, 229, 255); */
   }
 
   ::placeholder {
     color: rgb(0, 229, 255);
   }
 
+  #commentSelect {
+    border-radius: 3vh;
+    font-size: 70%;
+    font-weight: bolder;
+    text-align: center;
+    padding: 1vh;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    color: rgb(0, 229, 255);
+    background-color: rgb(35, 38, 50);
+  }
 
   #loginForm {
+    font-weight: bolder;
+    font-size: 70%;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -340,6 +392,22 @@ code {
     box-shadow: -4px 5px 25px rgb(249, 249, 249);
   }
 
+  #userPage {
+    text-align: center;
+    color: white;
+  }
+
+  #username {
+    color: rgb(0, 229, 255);
+  }
+
+  #homeAvatar {
+    height: 40%;
+    width: 40%;
+    border-radius: 36vh;
+  }
+
+
   .loginInput {
     border-radius: 2vh;
     font-size: larger;
@@ -348,8 +416,10 @@ code {
     padding: 2vh;
     margin-top: 2vh;
     margin-bottom: 2vh;
-    background-color: rgb(0, 20, 109);
-    color: rgb(0, 229, 255);
+    color: rgb(0, 253, 51);
+    background-color: rgb(35, 38, 50);
+    /* background-color: rgb(0, 20, 109);
+    color: rgb(0, 229, 255); */
   }
 
 /* 

@@ -28,7 +28,7 @@ function NewPost({showingForm}) {
                 <label htmlFor="content">Content</label>
                 <input className="postFormInput" placeholder="content" type="text" value={content} onChange={(e) => setContent(e.target.value) } name="content"/>
 
-                <label htmlFor="image">Image URL</label>
+                <label htmlFor="image">Image</label>
                 <input className="postFormInput" placeholder="image" type="text" value={image} onChange={(e) => setImage(e.target.value) } name="image"/>
 
                 <input className="postFormInput" type="submit" value="Post!"/>

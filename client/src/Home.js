@@ -7,8 +7,9 @@ function Home() {
 
     if (loggedIn) {
         return (
-            <div>
-                <h3>{user.username} Profile</h3>
+            <div id="userPage">
+                <h3>Welcome to the Base <h2 id="username">{user.username}</h2></h3>
+                <img src={user.avatar} alt="user image" id="homeAvatar" />
             </div>
         )
     } else {

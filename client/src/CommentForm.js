@@ -26,7 +26,7 @@ function CommentForm() {
             <form id="commentForm" onSubmit={submit} >
                 <input className="commentInput" placeholder="Add comment" type="text" value={commentBody} onChange={(e) => setCommentBody(e.target.value)} name="body"/>
 
-                <select className="commentInput" name="post_id" value={postId} onChange={(e) => setPostId(parseFloat(e.target.value))}>{postList}</select>
+                <select id="commentSelect" name="post_id" value={postId} onChange={(e) => setPostId(parseFloat(e.target.value))}>{postList}</select>
 
                 <input className="commentInput" type="submit" value="Comment!"/>
             </form>
