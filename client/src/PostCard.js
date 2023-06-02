@@ -6,9 +6,9 @@ function PostCard({post}) {
   
         return (
             <div className="postCard">
-                <h1>{title}</h1>
+                <h2>{title}</h2>
                 <img className="postImage" alt="post" src={image}/>
-                <h5>{content}</h5>
+                <h5 id="content">{content}</h5>
             </div>
         )
 }
