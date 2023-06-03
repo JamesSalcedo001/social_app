@@ -21,6 +21,7 @@ function Posts() {
                 </div>
 
                 <div>
+                    <h1 id="postList">Posts</h1>
                     {postMap}
                 </div>
             </div>

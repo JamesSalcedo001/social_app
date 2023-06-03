@@ -32,13 +32,11 @@ function CommentsList() {
                 <div>
                      <CommentForm />
                 </div>
-                
-                <div>
-                    {showEditing ? <EditCommentForm targetComment={targetComment} editOff={editOff}/> : null}
-                </div>
 
                 <div>
-                    <ul className="commentCards">{commentMap}</ul>
+                    <h1 id="commentTitle">Comments</h1>
+                    {showEditing ? <EditCommentForm targetComment={targetComment} editOff={editOff}/> : null}
+                    {commentMap}
                 </div>
             </div>
         )

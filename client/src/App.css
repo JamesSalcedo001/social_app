@@ -59,13 +59,13 @@ code {
 
 #postContainer {
   margin-top: 20vh;
-  padding: 1vh;
+  padding: 10vh;
   height: auto;
   width: 100vw;
   display: grid;
-  gap: 5vh;
   grid-template-rows: repeat(1, 1fr);
 }
+
 
 .postCard {
   margin: auto;
@@ -73,20 +73,30 @@ code {
   margin-bottom: 5vh;
   background-color: rgb(249, 253, 255);
   height: auto;
-  width: 20%;
-  font-size:50%;
+  width: 90%;
+  font-size:70%;
   border-radius: 3vh;
   padding: 2vh;
+  color: rgb(0, 253, 51);
+  background-color: rgb(35, 38, 50);
+  box-shadow: 0px 5px 25px rgb(249, 249, 249);
 }
 
+
+
+
+
+
 #content {
-  background-color: rgb(35, 38, 50);
-  color: white;
+  background-color: rgb(231, 217, 217);
+  color: rgb(0, 0, 0);
   border-radius: 1vh;
-  min-height: 5vh;
+  min-height: 10vh;
   margin: auto;
-  padding: 0.5vh;
-  max-width: 80%;
+  padding: 6.5vh;
+  max-width: 30%;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
 }
 
 .header {
@@ -97,7 +107,6 @@ code {
   padding: 1vh;
   height: fit-content;
   color: rgb(255, 255, 255);
-  margin-bottom: 50vh;
 }
 
 #headerHome {
@@ -112,17 +121,9 @@ code {
 }
 
 
-#postFormButton {
-  color: rgb(0, 253, 51);
-  background-color: rgb(35, 38, 50);
-  box-shadow: 0px 5px 25px rgb(249, 249, 249);
-  border-radius: 2vh;
-  font-size: 60%;
-  font-weight: bolder;
-  padding: 1.5vh;
-}
 
 #postForm {
+  margin-top: 30vh;
   font-weight: bolder;
   font-size: 70%;
   background-color: white;
@@ -130,13 +131,14 @@ code {
   flex-direction: column;
   padding: 2vw;
   height: auto;
-  width: 30%;
+  width: 60%;
   border-radius: 3vh;
   margin: auto;
-  box-shadow: -4px 5px 25px rgb(249, 249, 249);
+  box-shadow: 0px 5px 25px rgb(249, 249, 249);
   opacity: 0;
   animation: fade 0.6s ease-in 0.09s;
   animation-fill-mode: forwards;
+  margin-bottom: 30vh;
 }
 
 @keyframes fade {
@@ -161,14 +163,6 @@ code {
   margin-bottom: 2vh;
   color: rgb(0, 253, 51);
   background-color: rgb(35, 38, 50);
-  /* border-radius: 2vh;
-  font-size: larger;
-  text-align: center;
-  padding: 2vh;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  background-color: rgb(78, 219, 216);
-  min-width: 15vw; */
 }
 
 
@@ -179,8 +173,9 @@ code {
 }
 
 .postImage {
-  height: 30%;
-  width: 80%;
+  margin-top: 3vh;
+  height: 55%;
+  width: 55%;
   border-radius: 1vh;
   margin-bottom: 3vh;
 }
@@ -255,53 +250,6 @@ code {
     transform: rotate(360deg);
   }
 } 
-/* 
-.commentCard {
-  color: white;
-  background-color:rgb(26, 119, 205);
-  min-width: 10vmin;
-  min-height: 10vmin;
-  border-radius: 2vh;
-  font-size: 10pt;
-  overflow: hidden;
-  padding-bottom: 2vh;
-  margin: auto;
-  gap: 5vh;
-}
-
-
-#commentFormButton {
-  border-radius: 1.6vh;
-  width: 30vw;
-  line-height: 1.2em;
-  font-weight: bolder;
-  font-size: x-large;
-  padding: 0.4em;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
-  color: rgb(12, 173, 222);
-  background-color: rgb(10, 41, 70);
-}
-
-#commentForm {
-  font-size: xx-large;
-  display: flex;
-  align-content: center;
-  background-color: rgb(13, 18, 109);
-  width: max-content;
-  height: 6vmin;
-  border-radius: 1vh;
-  padding: 1vh;
-}
-
-.commentInput {
-  border-radius: 1vh;
-  padding: 1vw;
-  background-color: rgb(218, 228, 232);
-  margin-inline: 1vw;
-  line-height: 1.1em;
-  min-width: 150px;
-} */
 
 .errors {
   color: red;
@@ -316,9 +264,11 @@ code {
 }
 
 #postCommentImage {
-  height: 50%;
-  width: 50%;
-  border-radius: 3vh;
+  margin-top: 3vh;
+  height: 55%;
+  width: 55%;
+  border-radius: 1vh;
+  margin-bottom: 3vh;
 }
 
 
@@ -328,6 +278,7 @@ code {
   padding: 1vh;
   height: auto;
   width: 100vw;
+  align-content: center;
   display: grid;
   gap: 5vh;
   grid-template-rows: repeat(1, 1fr);
@@ -335,54 +286,76 @@ code {
 
 .commentCard {
   margin: auto;
-  /* margin-top: 10vh; */
+  margin-top: 20vh;
   margin-bottom: 5vh;
-  background-color: rgb(255, 255, 255);
-  /* height: auto; */
-  /* width: 50vw; */
   border-radius: 3vh;
-  height: 60%;
-  width: 30%;
-  font-size:75%;
-  padding: 1vh;
+  height: auto;
+  width: 90%;
+  font-size:70%;
+  padding: 2vh;
+  color: rgb(0, 253, 51);
+  box-shadow: 0px 5px 25px rgb(249, 249, 249);
 }
 
+
   #commentForm {
-    font-weight: bolder;
+  font-weight: bolder;
   font-size: 70%;
   background-color: white;
   display: flex;
   flex-direction: column;
-  padding: 2vw;
+  padding: 3vw;
   height: auto;
-  width: 30%;
+  width: 60%;
   border-radius: 3vh;
   margin: auto;
-  box-shadow: -4px 5px 25px rgb(249, 249, 249);
+  box-shadow: 0px 5px 25px rgb(249, 249, 249);
   opacity: 0;
   animation: fade 0.8s ease-in 0.09s;
   animation-fill-mode: forwards;
+  margin-bottom: 40vh;
+  
   }
 
-  .commentInput {
+  #commentInput {
+    border-radius: 3vh;
+    font-size: 70%;
+    font-weight: bolder;
+    text-align: center;
+    padding: 3vh;
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+    color: rgb(0, 253, 51);
+    background-color: rgb(35, 38, 50);
+  }
+
+  #commentFormButton {
     border-radius: 3vh;
     font-size: 70%;
     font-weight: bolder;
     text-align: center;
     padding: 1vh;
-    margin-top: 1vh;
+    margin-top: 3vh;
     margin-bottom: 2vh;
     color: rgb(0, 253, 51);
     background-color: rgb(35, 38, 50);
-    /* border-radius: 2vh;
-    font-size: large;
-    font-weight: bolder;
-    text-align: center;
-    padding: 1vh;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    background-color: rgb(0, 20, 109);
-    color: rgb(0, 229, 255); */
+  }
+
+  .commentButton {
+  box-shadow: 0px -1px 6px rgb(0, 253, 51);
+  border-radius: 1.6vh;
+  min-width: 200px;
+  line-height: 1.1em;
+  font-weight: bolder;
+  font-size: x-large;
+  padding: 0.4em;
+  margin-bottom:5vh;
+  color: rgb(0, 253, 51);
+  background-color: rgb(35, 38, 50);
+  transition: 0.3s;
+  opacity: 0;
+  animation: fade 0.8s ease-in 0.12s;
+  animation-fill-mode: forwards;
   }
 
   ::placeholder {
@@ -396,9 +369,20 @@ code {
     text-align: center;
     padding: 1vh;
     margin-top: 1vh;
-    margin-bottom: 2vh;
     color: rgb(0, 229, 255);
     background-color: rgb(35, 38, 50);
+  }
+
+  #commentCardBody {
+  background-color: rgb(35, 38, 50);
+  color: rgb(255, 255, 255);
+  border-radius: 1vh;
+  min-height: 10vh;
+  margin: auto;
+  padding: 6.5vh;
+  max-width: 30%;
+  margin-top: 3vh;
+  margin-bottom: 3vh; 
   }
 
   #loginForm {
@@ -433,7 +417,7 @@ code {
   #postFormButton {
     color: rgb(0, 253, 51);
     background-color: rgb(35, 38, 50);
-    box-shadow: -4px 5px 25px rgb(249, 249, 249);
+    box-shadow: 0px 5px 25px rgb(249, 249, 249);
     border-radius: 2vh;
     font-size: 60%;
     font-weight: bolder;
@@ -447,40 +431,20 @@ code {
     font-size: larger;
     font-weight: bolder;
     text-align: center;
-    padding: 2.5vh;
+    padding: 3vh;
     margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin-bottom: 1vh;
+    height: auto;
     color: rgb(0, 253, 51);
     background-color: rgb(35, 38, 50);
-    /* background-color: rgb(0, 20, 109);
-    color: rgb(0, 229, 255); */
   }
 
-/* 
-.commentContainer {
-margin-top: 30vh;
-width: 100vw;
-height: auto;
-display: grid;
-align-items: center;
-grid-template-rows: repeat(1, 1fr);
-padding: 5vw;
-gap: 5vh;
-} 
-
-
- .commentButton {
-  background-color: rgb(10, 41, 70);
-  color: rgb(12, 173, 222);
-  border-radius: 1.8vh;
-  min-width: 100px;
-  line-height: 1.1em;
-  font-weight: bolder;
-  font-size: large;
-  margin-inline: 0.5vw;
+#commentTitle {
+  color: white;
 }
- */
 
-
+#postList {
+  color: white;
+}
 
 

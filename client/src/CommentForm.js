@@ -24,11 +24,11 @@ function CommentForm() {
     return (
         <div>
             <form id="commentForm" onSubmit={submit} >
-                <input className="commentInput" placeholder="Add comment" type="text" value={commentBody} onChange={(e) => setCommentBody(e.target.value)} name="body"/>
+                <input id="commentInput" placeholder="Add comment" type="text" value={commentBody} onChange={(e) => setCommentBody(e.target.value)} name="body"/>
 
                 <select id="commentSelect" name="post_id" value={postId} onChange={(e) => setPostId(parseFloat(e.target.value))}>{postList}</select>
 
-                <input className="commentInput" type="submit" value="Comment!"/>
+                <input id="commentFormButton" type="submit" value="Comment!"/>
             </form>
             <h1>{errors}</h1>
         </div>

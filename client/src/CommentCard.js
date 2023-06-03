@@ -16,7 +16,7 @@ function CommentCard({comment, targeted}) {
                 <h5>{post.title}</h5>
                 <img id="commenter" alt="user avatar" src={user.avatar}/>
                 <h5>{user.username} said:</h5>
-                <h5>{body}</h5>
+                <h5 id="commentCardBody">{body}</h5>
                 <button className="commentButton" onClick={editClickHandler}>Edit</button>
                 <button className="commentButton" onClick={clickHandlerDelete}>Delete</button>
             </div>
