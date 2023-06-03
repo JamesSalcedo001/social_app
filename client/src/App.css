@@ -20,7 +20,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("https://wallpaperset.com/w/full/c/1/4/427159.jpg");
-  /* opacity: 80%; */
 }
 
 code {
@@ -35,6 +34,7 @@ code {
 
 
 #headerMoon {
+  margin-left: 1vw;
   float: left;
   height: 7vmin;
   pointer-events: none;
@@ -58,7 +58,7 @@ code {
 
 
 #postContainer {
-  margin-top: 20vh;
+  margin-top: 40vh;
   padding: 10vh;
   height: auto;
   width: 100vw;
@@ -69,11 +69,11 @@ code {
 
 .postCard {
   margin: auto;
-  margin-top: 10vh;
-  margin-bottom: 5vh;
+  margin-top: 40vh;
+  margin-bottom: 10vh;
   background-color: rgb(249, 253, 255);
   height: auto;
-  width: 90%;
+  width: 80%;
   font-size:70%;
   border-radius: 3vh;
   padding: 2vh;
@@ -125,13 +125,13 @@ code {
 #postForm {
   margin-top: 30vh;
   font-weight: bolder;
-  font-size: 70%;
+  font-size: 80%;
   background-color: white;
   display: flex;
   flex-direction: column;
-  padding: 2vw;
+  padding: 3vw;
   height: auto;
-  width: 60%;
+  width: 70%;
   border-radius: 3vh;
   margin: auto;
   box-shadow: 0px 5px 25px rgb(249, 249, 249);
@@ -155,12 +155,12 @@ code {
 
 .postFormInput {
   border-radius: 3vh;
-  font-size: 70%;
+  font-size: 90%;
   font-weight: bolder;
   text-align: center;
-  padding: 1.5vh;
-  margin-top: 1vh;
-  margin-bottom: 2vh;
+  padding: 2vh;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
   color: rgb(0, 253, 51);
   background-color: rgb(35, 38, 50);
 }
@@ -169,6 +169,7 @@ code {
 #avatar {
   float: right;
   height: 7vmin;
+  margin-right: 1vw;
   border-radius: 36vh;
 }
 
@@ -274,8 +275,8 @@ code {
 
 
 .commentContainer {
-  margin-top: 20vh;
-  padding: 1vh;
+  margin-top: 40vh;
+  padding: 10vh;
   height: auto;
   width: 100vw;
   align-content: center;
@@ -286,7 +287,7 @@ code {
 
 .commentCard {
   margin: auto;
-  margin-top: 20vh;
+  margin-top: 30vh;
   margin-bottom: 5vh;
   border-radius: 3vh;
   height: auto;
@@ -300,13 +301,13 @@ code {
 
   #commentForm {
   font-weight: bolder;
-  font-size: 70%;
+  font-size: 80%;
   background-color: white;
   display: flex;
   flex-direction: column;
   padding: 3vw;
   height: auto;
-  width: 60%;
+  width: 70%;
   border-radius: 3vh;
   margin: auto;
   box-shadow: 0px 5px 25px rgb(249, 249, 249);
@@ -319,22 +320,22 @@ code {
 
   #commentInput {
     border-radius: 3vh;
-    font-size: 70%;
+    font-size: 80%;
     font-weight: bolder;
     text-align: center;
-    padding: 3vh;
-    margin-top: 1vh;
-    margin-bottom: 3vh;
+    padding: 2vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
     color: rgb(0, 253, 51);
     background-color: rgb(35, 38, 50);
   }
 
   #commentFormButton {
     border-radius: 3vh;
-    font-size: 70%;
+    font-size: 80%;
     font-weight: bolder;
     text-align: center;
-    padding: 1vh;
+    padding: 2vh;
     margin-top: 3vh;
     margin-bottom: 2vh;
     color: rgb(0, 253, 51);
@@ -364,10 +365,10 @@ code {
 
   #commentSelect {
     border-radius: 3vh;
-    font-size: 70%;
+    font-size: 80%;
     font-weight: bolder;
     text-align: center;
-    padding: 1vh;
+    padding: 2vh;
     margin-top: 1vh;
     color: rgb(0, 229, 255);
     background-color: rgb(35, 38, 50);
@@ -387,16 +388,31 @@ code {
 
   #loginForm {
     font-weight: bolder;
-    font-size: 70%;
+    font-size: 80%;
     background-color: white;
     display: flex;
     flex-direction: column;
-    padding: 2vh;
+    padding: 3vh;
     height: auto;
-    width: 60%;
+    width: 80%;
     border-radius: 3vh;
     margin: auto;
-    box-shadow: -4px 5px 25px rgb(249, 249, 249);
+    box-shadow: 0px 5px 25px rgb(249, 249, 249);
+  }
+
+  #signupForm {
+    margin: auto;
+    font-weight: bolder;
+    font-size: 80%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 3vh;
+    height: auto;
+    width: 80%;
+    border-radius: 3vh;
+    margin: auto;
+    box-shadow: 0px 5px 25px rgb(249, 249, 249);
   }
 
   #userPage {
@@ -427,6 +443,19 @@ code {
 
 
   .loginInput {
+    border-radius: 2vh;
+    font-size: larger;
+    font-weight: bolder;
+    text-align: center;
+    padding: 3vh;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+    height: auto;
+    color: rgb(0, 253, 51);
+    background-color: rgb(35, 38, 50);
+  }
+
+  .signupInput {
     border-radius: 2vh;
     font-size: larger;
     font-weight: bolder;

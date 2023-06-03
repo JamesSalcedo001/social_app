@@ -51,17 +51,17 @@ function Signup() {
 
     return (
         <div>
-            <form onSubmit={submit}>
+            <form id="signupForm" onSubmit={submit}>
                 <label htmlFor="username">Username</label>
-                <input type="text" name="username" onChange={changeHandler} value={username} />
+                <input className="signupInput" type="text" name="username" onChange={changeHandler} value={username} />
 
                 <label htmlFor="password">Password</label>
-                <input type="password" name="password" onChange={changeHandler} value={password} />
+                <input className="signupInput" type="password" name="password" onChange={changeHandler} value={password} />
 
                 <label htmlFor="avatar">Avatar</label>
-                <input type="text" name="avatar" onChange={changeHandler} value={avatar} />
+                <input className="signupInput" type="text" name="avatar" onChange={changeHandler} value={avatar} />
 
-                <input type="submit" value="Sign Up!"/>
+                <input className="signupInput" type="submit" value="Sign Up!"/>
             </form>
             {errors ? <ul className="errors">{errors}</ul> : null}
         </div>
