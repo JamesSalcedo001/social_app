@@ -28,6 +28,28 @@ npm start
 
 When the application starts up in your browser, you start at the login/signup page. You can sign up if you are a new user with an avatar URL, a username, and a password. A username and password are required, but the avatar is optional. After you log in, you are navigated to the user profile landing page. At the top there is a header, where you can navigate around the site. There is a Post route, a Comment route, and a User Profile route, and you can logout when you are finished.
 
+![Screen Shot 2023-06-04 at 1 22 55 AM](https://github.com/JamesSalcedo001/social_app/assets/107723341/7e9590d6-814b-4165-99e7-c8bd01f15b1a)
+
+
+![Screen Shot 2023-06-04 at 1 23 16 AM](https://github.com/JamesSalcedo001/social_app/assets/107723341/6cb22b82-ebeb-444c-84bd-3369005ca188)
+
+
+![Screen Shot 2023-06-04 at 1 23 28 AM](https://github.com/JamesSalcedo001/social_app/assets/107723341/53e28780-4f87-4682-8b94-e49eea5aaa29)
+
+![Screen Shot 2023-06-04 at 1 23 49 AM](https://github.com/JamesSalcedo001/social_app/assets/107723341/223b62e5-4c54-4062-b58a-fc4434e71dbf)
+
+
+![Screen Shot 2023-06-04 at 1 24 23 AM](https://github.com/JamesSalcedo001/social_app/assets/107723341/724df68c-247b-47cc-8fb3-a7e0598422a1)
+
+
+![Screen Shot 2023-06-04 at 1 24 53 AM](https://github.com/JamesSalcedo001/social_app/assets/107723341/6354040d-b4c4-462f-afa7-837fe8a8af8c)
+
+![Screen Shot 2023-06-04 at 1 25 17 AM](https://github.com/JamesSalcedo001/social_app/assets/107723341/3148c311-f177-4540-a8ea-8359ec02a6c2)
+
+![Screen Shot 2023-06-04 at 1 25 52 AM](https://github.com/JamesSalcedo001/social_app/assets/107723341/61d7445e-32f3-4b30-beed-262b289233e9)
+
+
+
 ## Models and their Relationships
 
 ````python
