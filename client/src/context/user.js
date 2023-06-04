@@ -58,6 +58,9 @@ function UserProvider({children}) {
         .then(data => {
             if (data.errors) {
                 setErrors(data.errors)
+                setTimeout(() => {
+                    setErrors([])
+                }, 2000)
             } else {
                 setPosts([...posts, data])
                 showingForm(true)
@@ -66,7 +69,7 @@ function UserProvider({children}) {
     }
 
 
-    const addComment = (newComment, isCommenting) => {
+    const addComment = (newComment) => {
         fetch("/comments", {
             method: "POST",
             headers: {
@@ -78,10 +81,12 @@ function UserProvider({children}) {
         .then(data => {
             if (data.errors) {
                 setErrors(data.errors)
+                setTimeout(() => {
+                    setErrors([])
+                }, 2000)
             } else {
                 setComments([...comments, data])
                 setErrors([])
-                isCommenting(true)
             }
         })
         .catch(error => console.log(error))
@@ -92,16 +97,33 @@ function UserProvider({children}) {
     const removeComment = (id) => setComments(current => current.filter(c => c.id !== id))
 
 
+    // const deleteComment = (id) => {
+    //     fetch(`/comments/${id}`, {
+    //         method: "DELETE",
+    //     })
+    //     .then(() => {
+    //         removeComment(id)
+    //     })
+    //     .catch(error => console.log(error))
+    // }
+
+
     const deleteComment = (id) => {
         fetch(`/comments/${id}`, {
             method: "DELETE",
         })
-        .then(() => {
+        .then(res => res.json())
+        .then(data => {
+            if(data.errors) {
+            setErrors(data.errors)
+            setTimeout(() => {
+                setErrors([])
+            }, 2000)
+        } else {
             removeComment(id)
+        }
         })
-        .catch(error => console.log(error))
     }
-
 
     const updateCheck = (updatedComm)=> {
         const updatedCommList = comments.map(comm => {
@@ -126,14 +148,13 @@ function UserProvider({children}) {
         .then(data => {
             if(data.errors) {
                 setErrors(data.errors)
-                console.log(data.errors)
+                setTimeout(() => {
+                    setErrors([])
+                }, 2000)
             } else {
                 updateCheck(data)
             }
         })
-        // .then(res => res.json())
-        // .then(data => updateCheck(data))
-        // .catch(error => console.log(error))
     }
 
     const login = (user) => {

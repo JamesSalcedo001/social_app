@@ -255,7 +255,9 @@ code {
 .errors {
   color: red;
   font-size: xx-large;
-  float: left;
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
 }
 
 #commenter {
@@ -359,6 +361,17 @@ code {
   animation-fill-mode: forwards;
   }
 
+  #commentButtonDisplay {
+    color: rgb(0, 253, 51);
+    background-color: rgb(35, 38, 50);
+    box-shadow: 0px 5px 25px rgb(249, 249, 249);
+    border-radius: 2vh;
+    font-size: 60%;
+    font-weight: bolder;
+    padding: 1.5vh;
+    margin-bottom: 15vh;
+  }
+
   ::placeholder {
     color: rgb(0, 229, 255);
   }
@@ -438,6 +451,7 @@ code {
     font-size: 60%;
     font-weight: bolder;
     padding: 1.5vh;
+    margin-bottom: 30vh;
   }
 
 
@@ -476,4 +490,30 @@ code {
   color: white;
 }
 
+#editCommentForm {
+  margin: auto;
+  font-weight: bolder;
+  font-size: 80%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 3vh;
+  height: auto;
+  width: 80%;
+  border-radius: 3vh;
+  margin: auto;
+  box-shadow: 0px 5px 25px rgb(249, 249, 249);
+}
 
+.editFormInput {
+  border-radius: 2vh;
+    font-size: larger;
+    font-weight: bolder;
+    text-align: center;
+    padding: 3vh;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    height: auto;
+    color: rgb(0, 253, 51);
+    background-color: rgb(35, 38, 50);
+  }

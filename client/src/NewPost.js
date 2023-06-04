@@ -7,6 +7,7 @@ function NewPost({showingForm}) {
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     const [image, setImage] = useState("")
+
   
    const submit = (e) => {
     e.preventDefault()

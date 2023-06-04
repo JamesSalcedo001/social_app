@@ -4,9 +4,8 @@ import { UserContext } from "./context/user";
 
 
 function EditCommentForm({targetComment, editOff}) {
-    const {user, updateComment, errors} = useContext(UserContext)
+    const {user, updateComment} = useContext(UserContext)
     const [commentBody, setCommentBody] = useState(targetComment?.body || "")
-    const [editing, setEditing] = useState(false)
 
  
     const submit = (e) => {
@@ -16,33 +15,19 @@ function EditCommentForm({targetComment, editOff}) {
             user_id: user.id,
             id: targetComment.id
         })
-        setEditing(false)
         editOff()
     }
 
-    useEffect(() => {
-        return () => {
-            setCommentBody("")
-        }
-    },[])
-
-    if (targetComment === null) {
-        return null
-    }
-
-    if(!editing) {
         return (
             <div>
-                {errors ? <ul className="errors">{errors}</ul> : null}
-                <form onSubmit={submit}>
+                <form id="editCommentForm" onSubmit={submit}>
                     <label>Edit Comment</label>
-                    <input type="text" name="body" value={commentBody} onChange={(e) => setCommentBody(e.target.value)}/>
-                    <button type="submit">Update!</button>
+                    <input className="editFormInput" type="text" name="body" value={commentBody} onChange={(e) => setCommentBody(e.target.value)}/>
+                    <button className="editFormInput" type="submit">Update!</button>
                 </form>
                 
             </div>
         )
-    }
 }
 
 export default EditCommentForm;

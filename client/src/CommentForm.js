@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { UserContext } from "./context/user";
 
-function CommentForm() {
+function CommentForm({setIsCommenting}) {
     const [commentBody, setCommentBody] = useState("")
     const { user, posts, addComment, errors} = useContext(UserContext)
     const [postId, setPostId] = useState(1)
@@ -13,8 +13,7 @@ function CommentForm() {
         body: commentBody,
         post_id: postId,
         user_id: user.id
-    },    
-     )
+    }, setIsCommenting(false))
    }
 
 

@@ -66,7 +66,8 @@ class CommentsController < ApplicationController
 
     def destroy
         @comment.destroy
-        head :no_content
+        render json: @comment
+        # head :no_content
     end
 
     private 

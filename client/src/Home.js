@@ -9,7 +9,7 @@ function Home() {
         return (
             <div id="userPage">
                 <h3>Welcome to the Base <h2 id="username">{user.username}</h2></h3>
-                <img src={user.avatar} alt="user image" id="homeAvatar" />
+                <img src={user.avatar} alt="user" id="homeAvatar" />
             </div>
         )
     } else {

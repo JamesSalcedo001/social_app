@@ -2,14 +2,11 @@ import { useContext } from "react";
 import { UserContext } from "./context/user";
 
 function CommentCard({comment, targeted}) {
-    const {deleteComment, errors} = useContext(UserContext)
-
+    const {deleteComment} = useContext(UserContext)
     const {body,user, post, id} = comment
-    console.log(comment)
-
     const clickHandlerDelete = () => {deleteComment(id)}
     const editClickHandler = () => {targeted(comment)}
-  
+
         return (
             <div className="commentCard">
                 <img id="postCommentImage" alt="user avatar" src={post.image}/>
