@@ -102,6 +102,10 @@ Routing:
 
 ```
 
+## Credit
+
+These images are not owned by me, the moon is from a site called Flaticon, and the background is from a site called Wallpaperset! Check them out!
+
 
 ## Contributing
 
