@@ -26,6 +26,11 @@ function Header() {
                 <img id="headerMoon" src={"https://cdn-icons-png.flaticon.com/512/6635/6635373.png"} alt="moon"/>
                 <img id="avatar" alt="avatar" src={user.avatar}/>
                 <button className="headerButton" onClick={logOutUser}>Log Out!</button>
+
+                <NavLink to="/">
+                    <button className="headerButton">Profile!</button>
+                </NavLink>
+
                 <NavLink to="/post_list">
                     <button className="headerButton">See Posts!</button>
                 </NavLink>

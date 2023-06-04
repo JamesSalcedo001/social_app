@@ -191,7 +191,8 @@ code {
   background-color: rgb(10, 41, 70);
   color: rgb(12, 173, 222);
   transition: 0.3s;
-  min-width: 25%;
+  /* min-width: 25%; */
+  min-width: 18%;
 }
 
 .headerButton:hover {
@@ -293,7 +294,7 @@ code {
   margin-bottom: 5vh;
   border-radius: 3vh;
   height: auto;
-  width: 90%;
+  width: 80%;
   font-size:70%;
   padding: 2vh;
   color: rgb(0, 253, 51);
