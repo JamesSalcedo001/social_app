@@ -97,17 +97,6 @@ function UserProvider({children}) {
     const removeComment = (id) => setComments(current => current.filter(c => c.id !== id))
 
 
-    // const deleteComment = (id) => {
-    //     fetch(`/comments/${id}`, {
-    //         method: "DELETE",
-    //     })
-    //     .then(() => {
-    //         removeComment(id)
-    //     })
-    //     .catch(error => console.log(error))
-    // }
-
-
     const deleteComment = (id) => {
         fetch(`/comments/${id}`, {
             method: "DELETE",
