@@ -16,22 +16,24 @@ function CommentsList() {
   
     const editClick = (comment) => {
         setTargetComment(comment)
-        setShowEditing(true)
+        setShowEditing(showEditing => !showEditing)
     }
 
     const editOff = () => {
         setTargetComment(null)
-        setShowEditing(false)
+        setShowEditing(showEditing => !showEditing)
     }
 
-
+    const commentingToggle = () => setIsCommenting(isCommenting => !isCommenting)
+    
     if (loggedIn) {
        
-        const commentMap = comments.map(comment => <CommentCard key={comment.id} comment={comment} targeted={() => editClick(comment)} />)
+        const commentMap = comments.map(comment => <CommentCard key={comment.id} comment={comment} targeted={editClick} />)
+
         return (
             <div className="commentContainer">
                 <div>
-                     {isCommenting ? <CommentForm setIsCommenting={setIsCommenting}/> : <button id="commentButtonDisplay" onClick={() => setIsCommenting(!isCommenting)}>Comment!</button>}
+                     {isCommenting ? <CommentForm setIsCommenting={setIsCommenting}/> : <button id="commentButtonDisplay" onClick={commentingToggle}>Comment!</button>}
                      <h1 className="errors">{errors}</h1>
                 </div>
 

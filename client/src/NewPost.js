@@ -15,8 +15,8 @@ function NewPost({showingForm}) {
     const submit = (e) => {
     e.preventDefault()
     addPost({...formData}, showingForm)
-   }
-   
+    }
+
 
    const changeHandler = (e) => {
     const {name, value} = e.target
