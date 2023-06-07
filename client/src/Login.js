@@ -38,9 +38,7 @@ function Login() {
                 })
                 const errorList = user.errors.map((e) => <h2 key={e}>{e}</h2>)
                 setErrors(errorList)
-                setTimeout(() => {
-                    setErrors([])
-                }, 2000)
+                setTimeout(() => { setErrors([]) }, 2000)
             }
         })
     }

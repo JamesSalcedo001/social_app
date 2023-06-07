@@ -518,3 +518,7 @@ code {
     color: rgb(0, 253, 51);
     background-color: rgb(35, 38, 50);
   }
+
+  .no-access {
+    color: white;
+  }

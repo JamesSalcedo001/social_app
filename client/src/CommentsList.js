@@ -43,7 +43,7 @@ function CommentsList() {
         )
     } else {
         return (
-            <h1>Please Login or Sign Up!</h1>
+            <h1 className="no-access">Please Login or Sign Up!</h1>
         )
     }
 }

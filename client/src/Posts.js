@@ -6,10 +6,8 @@ import NewPost from "./NewPost";
 function Posts() {
     const {posts, loggedIn} = useContext(UserContext)
     const [showForm, setShowForm] = useState(false)
-    
-    function showingForm() {
-        setShowForm(false)
-    }
+ 
+    const showingForm = () => setShowForm(showForm => !showForm)
 
     if (loggedIn) {
 
@@ -17,7 +15,7 @@ function Posts() {
         return (
             <div id="postContainer">
                 <div>
-                    { showForm ? <NewPost showingForm={showingForm}/> : <button id="postFormButton" onClick={() => setShowForm(true)}>Add Post!</button>}
+                    { showForm ? <NewPost showingForm={showingForm}/> : <button id="postFormButton" onClick={showingForm}>Add Post!</button>}
                 </div>
 
                 <div>
@@ -28,9 +26,7 @@ function Posts() {
         )
     } else {
         return (
-            <>
-                <h1>Please Login or Sign Up</h1>
-            </>
+            <h1 className="no-access">Please Login or Sign Up</h1>
         )
     }
 }

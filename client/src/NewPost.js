@@ -4,33 +4,39 @@ import { UserContext } from "./context/user";
 function NewPost({showingForm}) {
     const { addPost, errors} = useContext(UserContext)
 
-    const [title, setTitle] = useState("")
-    const [content, setContent] = useState("")
-    const [image, setImage] = useState("")
+    const [formData, setFormData] = useState({
+        title: "",
+        content: "",
+        image: ""
+    })
+    const {title, content, image} = formData
 
-  
-   const submit = (e) => {
+
+    const submit = (e) => {
     e.preventDefault()
-        addPost({
-            title: title,
-            content: content,
-            image: image
-        }, showingForm)
+    addPost({...formData}, showingForm)
    }
+   
 
+   const changeHandler = (e) => {
+    const {name, value} = e.target
+    setFormData({...formData, [name]: value})
+   }
+ 
  
    const errorList = errors.map(e => <h2 key={e}>{e}</h2>)
+
     return (
         <div>
             <form onSubmit={submit} id="postForm">
                 <label htmlFor="title">Title</label>
-                <input className="postFormInput" placeholder="title" type="text" value={title} onChange={(e) => setTitle(e.target.value) } name="title"/>
+                <input className="postFormInput" placeholder="title" type="text" value={title} onChange={changeHandler} name="title"/>
 
                 <label htmlFor="content">Content</label>
-                <input className="postFormInput" placeholder="content" type="text" value={content} onChange={(e) => setContent(e.target.value) } name="content"/>
+                <input className="postFormInput" placeholder="content" type="text" value={content} onChange={changeHandler} name="content"/>
 
                 <label htmlFor="image">Image</label>
-                <input className="postFormInput" placeholder="image" type="text" value={image} onChange={(e) => setImage(e.target.value) } name="image"/>
+                <input className="postFormInput" placeholder="image" type="text" value={image} onChange={changeHandler} name="image"/>
 
                 <input className="postFormInput" type="submit" value="Post!"/>
             </form>

@@ -40,9 +40,7 @@ function Signup() {
                 })
                 const errorList = user.errors.map(e => <h1 key={e}>{e}</h1>)
                 setErrors(errorList)
-                setTimeout(() => {
-                    setErrors([])
-                }, 2000)
+                setTimeout(() => { setErrors([]) }, 2000)
             }
         })
     }
@@ -52,6 +50,7 @@ function Signup() {
         setFormData({...formData, [name]: value})
     }
 
+    
     return (
         <div>
             <form id="signupForm" onSubmit={submit}>
