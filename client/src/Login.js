@@ -7,7 +7,8 @@ function Login() {
         username: "",
         password: ""
     })
-    const [errors, setErrors] = useState("")
+    
+    const [errors, setErrors] = useState([])
     const {login} = useContext(UserContext)
     const navigate = useNavigate()
     const {username, password} = formData
@@ -48,7 +49,7 @@ function Login() {
         const {name, value} = e.target
         setFormData({...formData, [name]: value})
     }
-//hello
+    
     return (
         <div>
             <form id="loginForm" onSubmit={submit}>

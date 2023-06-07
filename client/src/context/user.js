@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from "react"
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const UserContext = React.createContext();
 
 function UserProvider({children}) {
-    const location = useLocation()
     const navigate = useNavigate()
     const [user, setUser] = useState({})
     const [posts, setPosts] = useState([])
@@ -29,22 +28,13 @@ function UserProvider({children}) {
         })
     },[])
 
-    useEffect(() => {
-        setErrors([])
-    }, [location.pathname])
-
-    const fetchPosts = () => {
-        fetch("/posts")
-        .then(res => res.json())
-        .then(data => setPosts(data))
-    }
 
 
-    const fetchComments = () => {
-        fetch("/comments")
-        .then(res => res.json())
-        .then(data => setComments(data))
-    }
+    const fetchPosts = () => {fetch("/posts").then(res => res.json()).then(data => setPosts(data))}
+
+
+    const fetchComments = () => {fetch("/comments").then(res => res.json()).then(data => setComments(data))}
+    
 
     const addPost = (post, showingForm) => {
         fetch("/posts", {
@@ -114,7 +104,7 @@ function UserProvider({children}) {
         })
     }
 
-    const updateCheck = (updatedComm)=> {
+    const updateCommentList = (updatedComm)=> {
         const updatedCommList = comments.map(comm => {
             if (comm.id === updatedComm.id) {
                 return updatedComm
@@ -141,7 +131,7 @@ function UserProvider({children}) {
                     setErrors([])
                 }, 2000)
             } else {
-                updateCheck(data)
+                updateCommentList(data)
             }
         })
     }
