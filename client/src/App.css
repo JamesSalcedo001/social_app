@@ -522,3 +522,13 @@ code {
   .no-access {
     color: white;
   }
+
+  #hey {
+    background-color: rgb(153, 51, 51);
+    color: white;
+  }
+
+  #homePost {
+    height: 5vmin;
+    width: 5vmin;
+  }

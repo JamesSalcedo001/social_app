@@ -26,3 +26,11 @@ function App() {
 }
 
 export default App;
+
+
+// links for presentation
+
+
+// signup for newuser cat => https://t4.ftcdn.net/jpg/02/66/72/41/360_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg
+
+// post image for newuser seal/sea lion => https://ocean.si.edu/sites/default/files/styles/photo_full/public/HawaiianMonkSeal_JamesWatt_SeaPicsCropped_0_0.jpg.webp?itok=0jQb6FSZ
