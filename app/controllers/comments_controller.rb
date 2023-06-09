@@ -56,7 +56,7 @@ class CommentsController < ApplicationController
     end
 
     def create
-        render json: Comment.create!(comment_params)
+        render json: @current_user.comments.create!(comment_params)
     end 
 
     def update
@@ -73,7 +73,7 @@ class CommentsController < ApplicationController
     private 
 
     def comment_params
-        params.permit(:body, :post_id, :user_id)
+        params.permit(:body, :post_id)
     end
 
     def find_comment
@@ -83,7 +83,6 @@ class CommentsController < ApplicationController
     def is_owner?
         permitted = @comment.user_id == @current_user.id
         render json: {errors: ["current user does not own this!"]}, status: :forbidden unless permitted
-        # render json: {errors: {user: "does not own this!"}}, status: :forbidden unless permitted
     end
 
 end

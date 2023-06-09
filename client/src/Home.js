@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 function Home() {
     const {user, loggedIn} = useContext(UserContext)
 
-
     if (loggedIn) {
         return (
             <div id="userPage">
