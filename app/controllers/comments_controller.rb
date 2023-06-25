@@ -19,8 +19,9 @@ class CommentsController < ApplicationController
     def destroy
         @comment.destroy
         render json: @comment
-        # head :no_content
     end
+
+
 
     private 
 
