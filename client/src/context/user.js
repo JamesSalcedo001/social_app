@@ -54,7 +54,6 @@ function UserProvider({children}) {
             } else {
                 setPosts([...posts, data])
                 showingForm(true)
-                //look over this check if need the showing form here and in the component
             }
         })
     }

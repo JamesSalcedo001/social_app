@@ -1,8 +1,7 @@
 class CommentsController < ApplicationController
     before_action :find_comment, except: [:create, :index]
     before_action :is_owner?, only: [:update, :destroy]
-
-
+  
     def index
         render json: Comment.all
     end

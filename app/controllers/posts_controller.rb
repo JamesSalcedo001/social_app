@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    
+
     def create
         post = Post.create!(post_params)
         render json: post, status: :ok
@@ -8,7 +8,6 @@ class PostsController < ApplicationController
     def index
         render json: Post.all
     end
-
 
     private
 

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   
+
   resources :comments, only: [:index, :create, :update, :destroy]
   resources :posts, only: [:index, :create]
   resources :users, only: [:show, :create]
   
+
   post "/signup", to: "users#create"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
