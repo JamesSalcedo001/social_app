@@ -349,17 +349,21 @@ code {
   box-shadow: 0px -1px 6px rgb(0, 253, 51);
   border-radius: 1.6vh;
   min-width: 200px;
+  margin-inline: 1vw;
   line-height: 1.1em;
   font-weight: bolder;
   font-size: x-large;
   padding: 0.4em;
+  transition: 0.3s;
   margin-bottom:5vh;
   color: rgb(0, 253, 51);
   background-color: rgb(35, 38, 50);
-  transition: 0.3s;
-  opacity: 0;
-  animation: fade 0.8s ease-in 0.12s;
-  animation-fill-mode: forwards;
+  }
+
+  .commentButton:hover {
+    translate: -5px -5px -5px;
+    box-shadow: 0px 5px 25px rgb(249, 249, 249);
+    color: rgb(255, 255, 255);
   }
 
   #commentButtonDisplay {

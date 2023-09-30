@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  
+
 
   resources :comments, only: [:index, :create, :update, :destroy]
   resources :posts, only: [:index, :create]
   resources :users, only: [:show, :create]
   
+
+  get "/fun-comments/:word", to: "comments#fun_comments"
 
   post "/signup", to: "users#create"
   post "/login", to: "sessions#create"

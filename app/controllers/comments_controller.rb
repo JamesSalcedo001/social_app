@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    before_action :find_comment, except: [:create, :index]
+    before_action :find_comment, except: [:create, :index, :fun_comments]
     before_action :is_owner?, only: [:update, :destroy]
   
     def index
@@ -20,6 +20,10 @@ class CommentsController < ApplicationController
         render json: @comment
     end
 
+      def fun_comments
+        comments_filtered = @current_user.comments.filter {|c| c.body.downcase.include?(params[:word])}
+        render json: comments_filtered
+    end
 
 
     private 
