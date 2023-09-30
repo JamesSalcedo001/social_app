@@ -26,6 +26,10 @@ npm start
 
 ## Usage
 
+Here I have included the live version of the application: [Social App](https://social-app-jpxa.onrender.com)
+
+Also, here I have the video demonstration of the app as well: [Social App Video](https://youtu.be/C70Eht4H9Y8)
+
 When the application starts up in your browser, you start at the login/signup page. You can sign up if you are a new user with an avatar URL, a username, and a password. A username and password are required, but the avatar is optional. After you log in, you are navigated to the user profile landing page. At the top there is a header, where you can navigate around the site. There is a Post route, a Comment route, and a User Profile route, and you can logout when you are finished.
 
 ![Screen Shot 2023-06-04 at 1 22 55 AM](https://github.com/JamesSalcedo001/social_app/assets/107723341/7e9590d6-814b-4165-99e7-c8bd01f15b1a)
